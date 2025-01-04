@@ -20,8 +20,8 @@ modules:
   - type: rpm-ostree
     repos:
       - https://negativo17.org/repos/fedora-multimedia.repo
-    # install:
-    #   - micro
+    install:
+      - micro
     #   - starship
     # remove:
     #   # example: removing firefox (in favor of the flatpak)
