@@ -22,6 +22,8 @@ modules:
       - https://negativo17.org/repos/fedora-multimedia.repo
     install:
       - micro
+      # install horizon client
+      - https://download3.omnissa.com/software/CART25FQ4_LIN64_RPMPkg_2412/Omnissa-Horizon-Client-2412-8.14.0-12437214089.x64.rpm
     #   - starship
     # remove:
     #   # example: removing firefox (in favor of the flatpak)
@@ -34,6 +36,14 @@ modules:
     install:
       - evdi
 
+  - type: script
+    snippets:
+      # make links for smartcard auth in horizon client
+      - mkdir -p /usr/lib/omnissa/horizon/pkcs11/
+      - ln -s /usr/lib64/pkcs11/opensc-pkcs11.so /usr/lib/omnissa/horizon/pkcs11/libopenscpkcs11.so 
+
+
+  
   # - type: default-flatpaks
   #   notify: true # Send notification after install/uninstall is finished (true/false)
   #   system:
