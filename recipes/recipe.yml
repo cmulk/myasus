@@ -41,6 +41,8 @@ modules:
       # make links for smartcard auth in horizon client
       - mkdir -p /usr/lib/omnissa/horizon/pkcs11/
       - ln -s /usr/lib64/pkcs11/opensc-pkcs11.so /usr/lib/omnissa/horizon/pkcs11/libopenscpkcs11.so
+      # make sure systemd-homed works for login
+      - authselect enable-feature with-systemd-homed
     scripts:
       - unpin_flatpak_runtimes.sh
 
