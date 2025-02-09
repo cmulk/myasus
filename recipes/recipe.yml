@@ -49,6 +49,11 @@ modules:
     scripts:
       - unpin_flatpak_runtimes.sh
 
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode
+
   # - type: default-flatpaks
   #   notify: true # Send notification after install/uninstall is finished (true/false)
   #   system:
