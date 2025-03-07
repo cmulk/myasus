@@ -24,17 +24,17 @@ modules:
       - micro
       # install horizon client
       - https://download3.omnissa.com/software/CART25FQ4_LIN64_RPMPkg_2412/Omnissa-Horizon-Client-2412-8.14.0-12437214089.x64.rpm
-    #   - starship
+      - kmod-evdi
     # remove:
     #   # example: removing firefox (in favor of the flatpak)
     #   # "firefox" is the main package, "firefox-langpacks" is a dependency
     #   - firefox
     #   - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
-  - type: akmods
-    base: coreos-stable # if not specified, classic "main" base is used by default
-    install:
-      - evdi
+  # - type: akmods
+  #   base: coreos-stable # if not specified, classic "main" base is used by default
+  #   install:
+  #     - evdi
 
   - type: script
     snippets:
