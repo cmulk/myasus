@@ -30,6 +30,11 @@ jobs:
           - recipe.yml
     steps:
       # the build is fully handled by the reusable github action
+
+      - name: Get MOK signing key
+        run: |
+          echo "${{ secrets.MOK }}" > ./mok.key
+
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8
         with:

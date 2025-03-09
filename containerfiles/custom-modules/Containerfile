@@ -1,0 +1,6 @@
+RUN --mount=type=tmpfs,target=/var/lib/dkms \
+    --mount=type=bind,source=./mok.key,target=/var/lib/dkms/mok.key \
+    --mount=type=bind,source=./files/system/etc/mok.pub,target=/var/lib/dkms/mok.pub \
+    KERN=$(ls /usr/src/kernels | head --lines=1) && \
+    dkms install evdi/1.14.8 -k $KERN && \
+    dkms status
