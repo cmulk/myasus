@@ -30,6 +30,8 @@ jobs:
           - recipe.yml
     steps:
       # the build is fully handled by the reusable github action
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Get MOK signing key
         run: |
@@ -44,4 +46,5 @@ jobs:
           pr_event_number: ${{ github.event.number }}
 
           # enabled by default, disable if your image is small and you want faster builds
-          maximize_build_space: true
+          maximize_build_space: false
+          skip_checkout: true
