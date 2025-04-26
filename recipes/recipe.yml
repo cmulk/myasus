@@ -52,8 +52,6 @@ modules:
       # fix ssh login for systemd-homed
       # generated using grep sshd /var/log/audit/audit.log | audit2allow -M ssh_systemd_homed
       - semodule --install /etc/selinux/ssh_systemd_homed.pp
-    scripts:
-      - unpin_flatpak_runtimes.sh
 
   - type: fonts
     fonts:

@@ -46,9 +46,6 @@ modules:
       - mkdir -p /usr/lib/omnissa/horizon/pkcs11/
       - ln -s /usr/lib64/pkcs11/opensc-pkcs11.so /usr/lib/omnissa/horizon/pkcs11/libopenscpkcs11.so
 
-    scripts:
-      - unpin_flatpak_runtimes.sh
-
   - type: fonts
     fonts:
       nerd-fonts:

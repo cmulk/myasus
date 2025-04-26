@@ -1,6 +1,8 @@
 RUN --mount=type=tmpfs,target=/var/lib/dkms \
     --mount=type=bind,source=./mok.key,target=/var/lib/dkms/mok.key \
     --mount=type=bind,source=./files/system/etc/mok.pub,target=/var/lib/dkms/mok.pub \
+    --mount=type=bind,source=./files/system/etc/mok.der,target=/var/lib/dkms/mok.der \
     KERN=$(ls /usr/src/kernels | head --lines=1) && \
     dkms install $(ls -d /usr/src/evdi-*) -k $KERN && \
-    dkms status
+    dkms status && \
+    # /usr/src/kernels/$KERN/scripts/sign-file sha256 /var/lib/dkms/mok.key /var/lib/dkms/mok.der /usr/lib/modules/$KERN/extra/evdi.ko.xz
