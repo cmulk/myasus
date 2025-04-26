@@ -26,7 +26,6 @@ modules:
       - micro
       # install horizon client
       - https://download3.omnissa.com/software/CART25FQ4_LIN64_RPMPkg_2412/Omnissa-Horizon-Client-2412-8.14.0-12437214089.x64.rpm
-      - dkms-evdi
     # remove:
     #   # example: removing firefox (in favor of the flatpak)
     #   # "firefox" is the main package, "firefox-langpacks" is a dependency

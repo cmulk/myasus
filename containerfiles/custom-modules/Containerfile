@@ -2,7 +2,13 @@ RUN --mount=type=tmpfs,target=/var/lib/dkms \
     --mount=type=bind,source=./mok.key,target=/var/lib/dkms/mok.key \
     --mount=type=bind,source=./files/system/etc/mok.pub,target=/var/lib/dkms/mok.pub \
     --mount=type=bind,source=./files/system/etc/mok.der,target=/var/lib/dkms/mok.der \
+    --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-myfw-latest,sharing=locked \
+    --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-myfw-latest,sharing=locked \
     KERN=$(ls /usr/src/kernels | head --lines=1) && \
-    dkms install $(ls -d /usr/src/evdi-*) -k $KERN && \
-    dkms status && \
-    # /usr/src/kernels/$KERN/scripts/sign-file sha256 /var/lib/dkms/mok.key /var/lib/dkms/mok.der /usr/lib/modules/$KERN/extra/evdi.ko.xz
+    dnf install -y akmod-evdi && \
+    akmods --force && \
+    dnf remove -y akmod-evdi && \
+    ls -l /usr/lib/modules/$KERN/extra/evdi && \
+    # dkms install $(ls -d /usr/src/evdi-*) -k $KERN && \
+    # dkms status && \
+    /usr/src/kernels/$KERN/scripts/sign-file sha256 /var/lib/dkms/mok.key /var/lib/dkms/mok.der /usr/lib/modules/$KERN/extra/evdi/evdi.ko.xz
