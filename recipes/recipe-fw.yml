@@ -45,13 +45,7 @@ modules:
       # make links for smartcard auth in horizon client
       - mkdir -p /usr/lib/omnissa/horizon/pkcs11/
       - ln -s /usr/lib64/pkcs11/opensc-pkcs11.so /usr/lib/omnissa/horizon/pkcs11/libopenscpkcs11.so
-      # remove unneeded sound fix
-      - rm -f /etc/modprobe.d/sound-fix.conf
-      # make sure systemd-homed works for login
-      # - authselect enable-feature with-systemd-homed
-      # fix ssh login for systemd-homed
-      # generated using grep sshd /var/log/audit/audit.log | audit2allow -M ssh_systemd_homed
-      # - semodule --install /etc/selinux/ssh_systemd_homed.pp
+
     scripts:
       - unpin_flatpak_runtimes.sh
 
