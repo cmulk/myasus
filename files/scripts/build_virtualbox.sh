@@ -18,12 +18,12 @@ akmods --force --kernels $KERN --akmod VirtualBox && \
 echo "Listing vbox modules:"
 ls -l /usr/lib/modules/$KERN/extra/VirtualBox && \
 
-echo "Signing kmod"
-echo "MOK_KEY: $MOK_KEY"
-echo "MOK_DER: $MOK_DER"
+# echo "Signing kmod"
+# echo "MOK_KEY: $MOK_KEY"
+# echo "MOK_DER: $MOK_DER"
 
-find "/usr/lib/modules/$KERN/extra/VirtualBox/" -type f | xargs -n1 \
-    /usr/src/kernels/$KERN/scripts/sign-file sha256 $MOK_KEY $MOK_DER
+# find "/usr/lib/modules/$KERN/extra/VirtualBox/" -type f | xargs -n1 \
+#     /usr/src/kernels/$KERN/scripts/sign-file sha256 $MOK_KEY $MOK_DER
 
 echo "Removing rpmfusion"
 dnf remove -y rpmfusion-free-release
