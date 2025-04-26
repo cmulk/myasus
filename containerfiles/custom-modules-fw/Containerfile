@@ -6,6 +6,7 @@ RUN --mount=type=tmpfs,target=/var/lib/dkms \
     --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-myfw-latest,sharing=locked \
     
     /scripts/build_evdi.sh && \
+    /scripts/build_virtualbox.sh && \
 
     dnf remove -y akmods
 

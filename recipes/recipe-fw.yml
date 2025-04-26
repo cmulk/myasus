@@ -37,7 +37,7 @@ modules:
 
   - type: containerfile
     containerfiles:
-      - custom-modules 
+      - custom-modules-fw
 
   - type: script
     snippets:
