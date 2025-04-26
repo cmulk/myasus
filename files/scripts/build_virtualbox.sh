@@ -12,11 +12,11 @@ echo "Installing Virtualbox"
 dnf install -y VirtualBox
 
 echo "Building virtualbox kmod for $KERN"
-akmods --force --kernels $KERN --akmod VirtualBox && \
+akmods --force --kernels $KERN --akmod VirtualBox
 
 
 echo "Listing vbox modules:"
-ls -l /usr/lib/modules/$KERN/extra/VirtualBox && \
+ls -l /usr/lib/modules/$KERN/extra/VirtualBox
 
 # echo "Signing kmod"
 # echo "MOK_KEY: $MOK_KEY"

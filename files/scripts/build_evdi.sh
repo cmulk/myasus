@@ -6,13 +6,13 @@ MOK_DER=${3:-/var/lib/dkms/mok.der }
 set -e
 
 echo "Installing kmod-evdi"
-dnf install -y kmod-evdi && \
+dnf install -y kmod-evdi
 
 echo "Building evdi kmod for $KERN"
-akmods --force --kernels $KERN --akmod evdi && \
+akmods --force --kernels $KERN --akmod evdi
 
 echo "Listing evdi module:"
-ls -l /usr/lib/modules/$KERN/extra/evdi && \
+ls -l /usr/lib/modules/$KERN/extra/evdi
 
 # echo "Signing kmod"
 # echo "MOK_KEY: $MOK_KEY"
