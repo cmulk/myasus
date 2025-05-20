@@ -11,7 +11,7 @@ RUN --mount=type=tmpfs,target=/var/lib/dkms \
     # mone.priv -> /etc/pki/akmods/private/private_key.priv
     
     /scripts/build_evdi.sh && \
-    /scripts/build_virtualbox.sh && \
+    # /scripts/build_virtualbox.sh && \
 
     dnf remove -y akmods
 

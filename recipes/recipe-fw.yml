@@ -20,8 +20,10 @@ modules:
   - type: rpm-ostree
     repos:
       - https://negativo17.org/repos/fedora-multimedia.repo
+      - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
     install:
       - micro
+      - vivaldi-stable
       # install horizon client
       - https://download3.omnissa.com/software/CART26FQ1_LIN64_RPMPKG_2503/Omnissa-Horizon-Client-2503-8.15.0-14256322247.x64.rpm
     # remove:
