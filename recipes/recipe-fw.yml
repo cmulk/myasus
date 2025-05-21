@@ -21,6 +21,8 @@ modules:
     repos:
       - https://negativo17.org/repos/fedora-multimedia.repo
       - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
+    optfix:
+      - vivaldi
     install:
       - micro
       - vivaldi-stable
