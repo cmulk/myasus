@@ -6,13 +6,8 @@ RUN --mount=type=tmpfs,target=/var/lib/dkms \
     --mount=type=bind,source=./files/system/etc/mok.der,target=/etc/pki/akmods/certs/public_key.der \
     --mount=type=cache,dst=/var/cache/rpm-ostree,id=rpm-ostree-cache-myfw-latest,sharing=locked \
     --mount=type=cache,dst=/var/cache/libdnf5,id=dnf-cache-myfw-latest,sharing=locked \
-
-    # mone.der  -> /etc/pki/akmods/certs/public_key.der
-    # mone.priv -> /etc/pki/akmods/private/private_key.priv
-    
     /scripts/build_evdi.sh && \
     # /scripts/build_virtualbox.sh && \
-
     dnf remove -y akmods
 
 
